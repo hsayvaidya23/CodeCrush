@@ -1,12 +1,19 @@
 import axios from "axios";
+import { url } from "inspector";
 
 const api = axios.create({
-    baseURL: process.env.API_BASE_URL,
-    headers: {
-        Authorization: `Bearer ${process.env.BACKEND_API_KEY}`,
-    },
-})
+  baseURL: process.env.API_BASE_URL,
+  headers: {
+    Authorization: `Bearer ${process.env.BACKEND_API_KEY}`,
+  },
+});
 
 // Categories
 
-export const fetchCategories = async() => api.get('/api/categories');
+export const fetchCategories = async () => api.get("/api/categories");
+
+// // Articles
+// export const fetchArticles = async (queryString: string) => api.get(`/api/articles?${encodeURIComponent(queryString)}`)
+export const fetchArticles = async (queryString: string) => api.get(`/api/articles?${(queryString)}`)
+
+
