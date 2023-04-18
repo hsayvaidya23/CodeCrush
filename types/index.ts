@@ -1,3 +1,5 @@
+import { type } from "os";
+
 export interface  ICategory {
     id: number;
     attributes: ICategoryAttribute;
@@ -14,7 +16,7 @@ export interface ICollectionResponse<T>{
 }
 
 export interface IResourceMeta {
-    paignation: IPagination;
+    pagination: IPagination;
 }
 
 export interface IPagination {
@@ -73,3 +75,4 @@ export interface IArticlesAttribute {
     shortDescription: string;
 }
 
+export type TDirection = 1 | -1;

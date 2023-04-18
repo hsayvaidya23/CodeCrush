@@ -5,6 +5,7 @@ import { ICollectionResponse, ICategory, IArticle, IPagination } from "@/types";
 import { AxiosResponse } from "axios";
 import Tabs from "@/components/Tabs";
 import ArticleList from "@/components/ArticleList";
+import Pagination from "@/components/Pagination";
 // import qs from 'qs';
 let qs = require("qs");
 
@@ -19,6 +20,8 @@ interface IPropTypes {
 }
 
 const Home: NextPage<IPropTypes> = ({ categories, articles }) => {
+  const { page, pageCount } = articles.pagination;
+
   return (
     <>
       <Head>
@@ -31,24 +34,28 @@ const Home: NextPage<IPropTypes> = ({ categories, articles }) => {
 
       {/* Articles */}
       <ArticleList articles={articles.items} />
+      <Pagination page={page} pageCount={pageCount}  />
     </>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   // articles
   const options = {
-    populate: ['author.avatar'],
-    sort: ['id:desc'],
-};
+    populate: ["author.avatar"],
+    sort: ["id:desc"],
+    pagination: {
+      page: query.page ? query.page : 1,
+      pageSize: 1,
+    },
+  };
 
   const queryString = qs.stringify(options);
 
   const { data: articles }: AxiosResponse<ICollectionResponse<IArticle[]>> =
     await fetchArticles(queryString);
-    // console.log(articles)
+  // console.log(articles)
   // console.log(JSON.stringify(articles));
-  
 
   // categories
   const { data: categories }: AxiosResponse<ICollectionResponse<ICategory[]>> =
@@ -61,7 +68,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
       },
       articles: {
         items: articles.data,
-        pagination: articles.meta.paignation ?? null,
+        pagination: articles.meta.pagination ?? null,
       },
     },
   };

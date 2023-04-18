@@ -3,3 +3,10 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+
+@layer components {
+    .disabled {
+        @apply opacity-50 cursor-not-allowed
+    }
+}

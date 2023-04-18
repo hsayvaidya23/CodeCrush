@@ -31,13 +31,13 @@ const Tabs = ({ categories }: IPropType) => {
             }`
           }
         >
-          <Link href={"#"}>Recent</Link>
+          <Link href={"/"}>Recent</Link>
         </li>
         {categories.map((category) => {
           return (
             <li
               className={
-                "mr-6 pb-6 border-b-4 rounded-sm " +
+                 "mr-6 pb-6 border-b-4 rounded-sm " +
                 `${
                   isActiveLink(category)
                     ? "border-primary text-primary"
