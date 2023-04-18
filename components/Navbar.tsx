@@ -24,13 +24,13 @@ const Navbar = () => {
           <Link href={"/"}>Products</Link>
         </li>
         <li className="mr-6 font-medium text-gray-600">
-          <Link href={"/about"}>Pricing</Link>
+          <Link href={"/"}>Pricing</Link>
         </li>
         <li className="mr-6 font-medium text-gray-600">
-          <Link href={"/about"}>Docs</Link>
+          <Link href={"/"}>Docs</Link>
         </li>
         <li className="mr-6 font-medium text-gray-600">
-          <Link href={"/about"}>Company</Link>
+          <Link href={"/"}>Company</Link>
         </li>
       </ul>
 

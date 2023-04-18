@@ -10,7 +10,7 @@ interface IPropType {
 const Blogcard = ({ article }: IPropType) => {
   return (
     <div>
-      <Link href={`#`}>
+      <Link href={`/article/${article.attributes.Slug}`}>
         <h1 className="text-xl text-gray-600 font-bold hover:decoration-2 hover:underline hover:cursor-pointer hover:decoration-primary">
           {article.attributes.Title}
         </h1>
