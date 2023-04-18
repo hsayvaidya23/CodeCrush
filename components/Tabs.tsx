@@ -5,18 +5,17 @@ import Link from "next/link";
 
 interface IPropType {
   categories: ICategory[];
+  handleOnSearch: (query: string) => void;
 }
 
-const Tabs = ({ categories }: IPropType) => {
+const Tabs = ({ categories,handleOnSearch }: IPropType) => {
   const router = useRouter();
 
   const isActiveLink = (category: ICategory) => {
     return category.attributes.Slug === router.query.category;
   };
 
-  const handleOnSearch = (query: string) => {
-    console.log("handing search");
-  };
+ 
 
   return (
     <div className="my-8 flex items-center justify-between border-b-2 border-gray-100">
@@ -37,7 +36,7 @@ const Tabs = ({ categories }: IPropType) => {
           return (
             <li
               className={
-                 "mr-6 pb-6 border-b-4 rounded-sm " +
+                  "mr-6 pb-6 border-b-4 rounded-sm " +
                 `${
                   isActiveLink(category)
                     ? "border-primary text-primary"
