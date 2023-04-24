@@ -35,6 +35,10 @@ const slug = ({ article, notFound = false }: IPropType) => {
             <div className="rounded-lg overflow-hidden flex items-center justify-center mr-2">
               <Image
                 alt="image of avatar"
+<<<<<<< HEAD
+=======
+                // src={`http://127.0.0.1:1337${article.attributes.author.data.attributes.avatar.data.attributes.formats.thumbnail.url}`}
+>>>>>>> 8f465568a40d4a2f72ef4fca6b10bba2dc3ecc5b
                 src={`${process.env.API_BASE_URL}${article.attributes.author.data.attributes.avatar.data.attributes.formats.thumbnail.url}`}
                 height={40}
                 width={40}
@@ -52,6 +56,10 @@ const slug = ({ article, notFound = false }: IPropType) => {
             <Image
               alt="image of article"
               className="w-full my-12 mb-6"
+<<<<<<< HEAD
+=======
+              // src={`http://127.0.0.1:1337${article.attributes.Image.data.attributes.url}`}
+>>>>>>> 8f465568a40d4a2f72ef4fca6b10bba2dc3ecc5b
               src={`${process.env.API_BASE_URL}${article.attributes.Image.data.attributes.url}`}
               width={500}
               height={500}
