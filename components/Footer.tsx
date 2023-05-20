@@ -11,7 +11,7 @@ const Footer = () => {
           className="flex items-center justify-center md:justify-start text-gray-900"
         >
           <Image
-            src={"/logo_final.png"}
+            src={"/codeCrusher.png"}
             alt="footer logo of website"
             width={150}
             height={35}

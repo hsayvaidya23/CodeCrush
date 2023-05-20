@@ -8,7 +8,7 @@ const Navbar = () => {
       <Link href="/">
         <div className="flex items-center cursor-pointer">
           <Image
-            src="/logo_final.png"
+            src="/codeCrusher.png"
             alt="logo of website"
             height={35}
             width={300}
@@ -21,16 +21,16 @@ const Navbar = () => {
 
       <ul className="flex items-center">
         <li className="mr-6 font-medium text-gray-600">
-          <Link href={"/"}>Products</Link>
+          <Link href={"/"}>Web Development</Link>
         </li>
         <li className="mr-6 font-medium text-gray-600">
-          <Link href={"/"}>Pricing</Link>
+          <Link href={"/"}>Artificial Intelligence</Link>
         </li>
         <li className="mr-6 font-medium text-gray-600">
-          <Link href={"/"}>Docs</Link>
+          <Link href={"/"}>Data Science</Link>
         </li>
         <li className="mr-6 font-medium text-gray-600">
-          <Link href={"/"}>Company</Link>
+          <Link href={"/"}>Database</Link>
         </li>
       </ul>
 
